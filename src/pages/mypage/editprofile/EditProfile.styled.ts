@@ -33,8 +33,6 @@ export const UserIcon = styled.img`
   height: 100%;
 
   border-radius: 50%;
-  
-  
 `;
 
 export const Wrapper2 = styled.div`
@@ -46,7 +44,6 @@ export const Wrapper2 = styled.div`
   width: 420px;
   justify-content: space-between;
 `;
-
 
 export const IconDes = styled.p`
   font-size: 13px;
@@ -125,7 +122,7 @@ export const SubmitButton = styled.button`
 `;
 
 export const ModalSubmitButton = styled(SubmitButton)`
-width: 100%;
+  width: 100%;
   height: 40px;
   margin: 20px auto 0 auto;
 `;

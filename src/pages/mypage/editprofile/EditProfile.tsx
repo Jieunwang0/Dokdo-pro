@@ -66,12 +66,12 @@ function EditProfileComponent() {
     [newPassword],
   );
   // 파일 선택 시 호출되는 함수
- const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-   const selectedFile = e.target.files?.[0]; // Get the first selected file
-   if (selectedFile) {
-     setSelectedFile(selectedFile);
-   }
- };
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0]; // Get the first selected file
+    if (selectedFile) {
+      setSelectedFile(selectedFile);
+    }
+  };
   // logintoken 확인하고 유저 정보 가져옴
   useEffect(() => {
     axios
@@ -110,13 +110,13 @@ function EditProfileComponent() {
         headers: {
           Authorization: `Bearer ${loginToken}`,
           'Content-Type': 'multipart/form-data',
-        },  
+        },
         withCredentials: true,
       })
       .then(response => {
         if (response.status === 200) {
           // 업로드 성공 시, 프로필 이미지를 업데이트합니다.
-         setProfilePic(response.data.data);
+          setProfilePic(response.data.data);
           setIsProfileImageModalOpen(false);
         } else {
           console.error('프로필 이미지 업로드 실패:', response.data.error);
@@ -128,7 +128,6 @@ function EditProfileComponent() {
   };
 
   if (!userData) {
-   
     return <div>로딩 중...</div>;
   }
 
@@ -228,12 +227,8 @@ function EditProfileComponent() {
             </EditStyle.ModalSubmitButton>
           </Modal>
         )}
-        <EditStyle.IconDes>
-          50MB 이하의 jpg 확장자 파일만
-        </EditStyle.IconDes>
-        <EditStyle.IconDes>
-          업로드가 가능합니다.
-        </EditStyle.IconDes>
+        <EditStyle.IconDes>50MB 이하의 jpg 확장자 파일만</EditStyle.IconDes>
+        <EditStyle.IconDes>업로드가 가능합니다.</EditStyle.IconDes>
       </EditStyle.Wrapper>
       <EditStyle.Wrapper2>
         <EditStyle.FormTag>

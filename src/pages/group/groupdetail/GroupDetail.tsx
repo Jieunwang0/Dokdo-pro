@@ -283,7 +283,7 @@ function GroupDetail() {
         )}
       </GD.Schedule>
       <GD.MemberBox>
-        <GD.Member>모집멤버 {members.length}</GD.Member>{' '}
+        <GD.Member>모집멤버 {members.length + 1}</GD.Member>{' '}
         {/* Displaying count of members here */}
         <ul>
           {members.map((member: MemberType, index: number) => (

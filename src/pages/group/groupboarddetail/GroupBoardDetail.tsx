@@ -37,12 +37,10 @@ interface GroupBoardDetailDataProps {
 
 const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
   const loginToken = getCookie('loginToken');
-
   const { groupId, postsId } = useParams<{
     groupId?: string;
     postsId?: string;
   }>();
-
   const group_Id = groupId ? parseInt(groupId, 10) : undefined;
   const post_Id = postsId ? parseInt(postsId, 10) : undefined;
 
@@ -50,6 +48,7 @@ const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentText, setCommentText] = useState('');
+  const [replyText, setReplyText] = useState<string>('');
 
   useEffect(() => {
     if (group_Id && post_Id) {
@@ -101,6 +100,27 @@ const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
       }
     } catch (error) {
       console.error('Error posting comment:', error);
+    }
+  };
+  const postReply = async (commentId: number) => {
+    try {
+      const response = await axios.post(
+        `http://localhost:3001/api/v1/group/${group_Id}/posts/${post_Id}/comments/${commentId}/reply`,
+        { text: replyText },
+        {
+          headers: {
+            Authorization: `Bearer ${loginToken}`,
+          },
+          withCredentials: true,
+        },
+      );
+      if (response.status === 200) {
+        window.location.reload();
+      } else {
+        console.error('Error posting reply:', response.status);
+      }
+    } catch (error) {
+      console.error('Error posting reply:', error);
     }
   };
 

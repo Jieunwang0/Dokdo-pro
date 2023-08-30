@@ -17,7 +17,6 @@ import Layout6 from '../components/layout/layout1/Layout6';
 import Layout8 from '../components/layout/layout1/Layout8';
 import Layout3 from '../components/layout/layout1/Layout3';
 
-
 const MypageRoutes = () => {
   return (
     <Routes>
