@@ -47,20 +47,28 @@ export const Step = styled.div`
 export const Title = styled.h1`
   margin-bottom: 15px;
   font-size: 27px;
-  text-align: center;
   color: #000000;
   margin-bottom: 30px;
   font-weight: bold;
   position: relative;
   top: -15px;
 `;
+export const FormGroupDate = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px 0 30px 50px;
+  width: 100%;
+
+  & div {
+    margin-right: 20px;
+  }
+`;
 
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column; // 추가한 속성
-  align-items: flex-start; // 이전의 center에서 시작으로 변경
+  align-items: center; // 이전의 center에서 시작으로 변경
   font-size: 18px;
-  margin-bottom: 10px;
   width: 100%;
   max-width: 400px;
   position: relative;
@@ -119,7 +127,7 @@ export const Input = styled.input`
   margin-left: 0px;
 `;
 export const SubmitButton = styled.button`
-  width: 442px;
+  width: 440px;
   height: 66px;
   border-radius: 20px;
   background: #84614b;
@@ -129,11 +137,8 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
-  margin-left: 238px;
+  bottom: 65px;
   position: fixed;
-  bottom: 9px;
-  left: 50%;
-  transform: translateX(-50%);
 
   &:hover {
     background: #71503c;
@@ -192,4 +197,17 @@ export const RemoveTagButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   color: #9b9b9b;
+`;
+
+export const Place = styled.div`
+  display: flex;
+`;
+
+export const FormGroupPlace = styled.div`
+  align-items: center;
+  display: flex;
+
+  & div {
+    margin-right: 20px;
+  }
 `;

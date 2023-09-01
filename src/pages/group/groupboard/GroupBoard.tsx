@@ -32,6 +32,9 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
   const { groupId } = useParams<{ groupId: string }>();
   const [groupBoardData, setGroupBoardData] = useState<GroupData[]>([]);
   const loginToken = getCookie('loginToken');
+  const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const formatDate = (dateString: string | number | Date) => {
@@ -41,12 +44,15 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
   };
   //localhost:3000
   async function fetchAllGroupBoardData(groupId: number) {
+    setLoading(true);
+
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/v1/group/${groupId}/posts?limit=5&offset=0`,
+        `http://localhost:3001/api/v1/group/${groupId}/posts?`,
       );
       return response.data.data;
     } catch (error) {
+      setLoading(false);
       throw error;
     }
   }
@@ -79,6 +85,28 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
     fetchData();
   }, [loginToken, groupId]);
 
+
+  
+  // 스크롤 이벤트 감지 함수
+  const handleScroll = () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (windowHeight + scrollTop >= documentHeight - 100 && !loading) {
+      // 스크롤이 가장 아래로 도달하면 추가 데이터를 로드합니다.
+      setOffset(prevOffset => prevOffset + 5);
+    }
+  };
+
+  // 스크롤 이벤트 리스너 등록
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <GB.Wrapper>
       <GroupHeader data={{ group: Number(groupId) }} />
@@ -86,7 +114,7 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
         <PenFooter />
         <SearchInput />
         <GB.GroupBoardTitle>
-          <div>모임 이름</div>
+          <div>게시글 목록</div>
         </GB.GroupBoardTitle>
         {groupBoardData.map((groupBoardItem, index) => (
           <GB.Boardbox
@@ -97,10 +125,10 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
           >
             <GB.BoardLeft>
               <GB.User>
-                <img src={groupBoardItem.user.profilePic} alt="게시자 프로필" />
+                <img src={`http://localhost:3001/api/v1/image/profile/${groupBoardItem.user.profilePic}`} alt="게시자 프로필" />
                 <GB.UserName>
                   <div>{groupBoardItem.user.name}</div>
-                  <div>{formatDate(groupBoardItem.post.createdAt)}</div>
+                  <GB.UserDate>{formatDate(groupBoardItem.post.createdAt)}</GB.UserDate>
                 </GB.UserName>
               </GB.User>
               <div>

@@ -86,7 +86,7 @@ const PhotoAlbum: React.FC<PhotoItemProps> = ({ data }) => {
       <PA.InputDisplay>
         <SearchInput />
       </PA.InputDisplay>
-      <PA.GroupPhotoTitle>모임 사진첩</PA.GroupPhotoTitle>
+      <PA.GroupPhotoTitle>사진첩 목록</PA.GroupPhotoTitle>
 
       <PA.PhotoList>
         <ul>
@@ -103,7 +103,10 @@ const PhotoAlbum: React.FC<PhotoItemProps> = ({ data }) => {
                 <PA.PhotoBoardBox>
                   <PA.Profile>
                     <PA.ProfileImg>
-                      <img src={photoItem.user.profilePic} alt="프로필" />
+                      <img
+                        src={`http://localhost:3001/api/v1/image/profile/${photoItem.user.profilePic}`}
+                        alt="게시자 프로필"
+                      />
                     </PA.ProfileImg>
                     <PA.User>
                       <div>{photoItem.user.name}</div>

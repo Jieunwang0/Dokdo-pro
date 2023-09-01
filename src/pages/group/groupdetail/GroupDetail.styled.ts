@@ -376,3 +376,64 @@ export const NFNextBtn = styled.div`
     cursor: pointer;
   }
 `;
+export const DropdownButton = styled.button`
+  position: fixed;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 21%;
+  bottom: 75%;
+  font-size: 25px;
+  top: 0;
+`;
+
+export const DropdownContent = styled.div`
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 15px;
+  width: 180px;
+  height: 80px;
+`;
+
+export const ProfileSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+`;
+
+export const DeleteSection = styled.div`
+  display: flex;
+  align-items: center;
+`;
+// 스타일링된 파일 선택 버튼
+export const StyledFileInput = styled.input`
+  display: none;
+`;
+
+export const CustomFileInput = styled.label`
+  display: inline-block;
+  background-color: #ffffff;
+  color: 000;
+  padding: 10px 37px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #634b36;
+  }
+`;
+
+// 파일 선택 버튼의 라벨 디자인
+export const CustomFileInputLabel = styled.span`
+  font-size: 15px;
+`;

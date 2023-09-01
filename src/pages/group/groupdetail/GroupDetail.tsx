@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import GroupImg from '@/assets/img/독서모임3.png';
 import axios from 'axios';
 import { getCookie } from '@/helper/Cookie';
 import * as GD from '@/pages/group/groupdetail/GroupDetail.styled';
+import { useNavigate } from 'react-router-dom';
 
 import {
   ModalWrapper,
@@ -31,7 +31,7 @@ interface GroupData {
   group_id: number;
   name: string;
   isRecruit: boolean;
-  profile: string;
+  profile: string[];
   leader: number;
   like: number;
   mem: Array<{
@@ -57,6 +57,7 @@ interface GroupData {
 }
 
 function GroupDetail() {
+  const navigate = useNavigate();
   const [groupData, setGroupData] = useState<GroupData | null>(null);
   const { groupId } = useParams<{ groupId: string }>();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,6 +67,8 @@ function GroupDetail() {
   const getLocalStorageKey = () => `schedules_${groupId}`;
   const [members, setMembers] = useState<Array<any>>([]);
   const uniqueMembers: MemberType[] = [];
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   members.forEach(member => {
     // Check if the member's user_id and name are not already in uniqueMembers
     if (
@@ -76,7 +79,9 @@ function GroupDetail() {
       uniqueMembers.push(member);
     }
   });
-
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -214,6 +219,31 @@ function GroupDetail() {
       console.error('그룹 가입 에러:', error);
     }
   }
+  async function handleDeleteGroup() {
+    if (window.confirm('정말로 그룹을 삭제하시겠습니까?')) {
+      try {
+        const response = await axios.delete(
+          `http://localhost:3001/api/v1/group/${groupId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${loginToken}`,
+            },
+            withCredentials: true,
+          },
+        );
+
+        if (response.status === 200) {
+          console.log('그룹 삭제 성공:', response.data);
+          // 그룹 삭제 후 리다이렉트 등 처리 가능
+          navigate('/group/list');
+        } else {
+          console.error('그룹 삭제 실패:', response.status);
+        }
+      } catch (error) {
+        console.error('그룹 삭제 에러:', error);
+      }
+    }
+  }
 
   return (
     <GD.Wrapper>
@@ -229,19 +259,33 @@ function GroupDetail() {
           />
         </GD.GroupImage>
       </GD.GroupImage>
+      <GD.DropdownButton onClick={toggleDropdown}>▪︎▪︎▪︎</GD.DropdownButton>
+
+      {showDropdown && (
+        <GD.DropdownContent>
+          <GD.ProfileSection>
+            <GD.CustomFileInput htmlFor="profilePicInput">
+              <GD.StyledFileInput
+                id="profilePicInput"
+                type="file"
+                accept="image/*"
+                onChange={e =>
+                  setSelectedImage(e.target.files && e.target.files[0])
+                }
+              />
+              <GD.CustomFileInputLabel onClick={uploadProfilePic}>
+                그룹 사진 업로드
+              </GD.CustomFileInputLabel>
+            </GD.CustomFileInput>
+          </GD.ProfileSection>
+          <GD.DeleteSection>
+            <GD.CustomFileInputLabel onClick={handleDeleteGroup}>
+              그룹 삭제하기
+            </GD.CustomFileInputLabel>
+          </GD.DeleteSection>
+        </GD.DropdownContent>
+      )}
       <GD.GroupInfo>
-        <GD.EditButton>
-          <label htmlFor="profilePicInput">▪︎▪︎▪︎</label>
-          <input
-            id="profilePicInput"
-            type="file"
-            accept="image/*"
-            onChange={e =>
-              setSelectedImage(e.target.files && e.target.files[0])
-            }
-          />
-          <button onClick={uploadProfilePic}>프로필 사진 업로드</button>
-        </GD.EditButton>
         <GD.GroupName>📚{groupData.name}</GD.GroupName>
         <GD.GroupInfoTP>
           <div>🏖️ {groupData.place}</div>

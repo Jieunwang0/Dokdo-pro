@@ -14,6 +14,7 @@ import {
   TagList,
   Tag,
   RemoveTagButton,
+  SubmitButtonDisplay,
 } from '@/pages/group/groupcreate/GroupCreatePage2.Styled';
 
 import SelectBox from '@/components/common/selectbox/SelectBox2';
@@ -145,7 +146,10 @@ const GroupCreatePage2: React.FC<GroupCreatePage2Props> = ({
           ))}
         </TagList>
       </KeywordGroup>
-      <SubmitButton onClick={handleSubmit}>다음</SubmitButton>
+      <SubmitButtonDisplay>
+        {' '}
+        <SubmitButton onClick={handleSubmit}>다음</SubmitButton>
+      </SubmitButtonDisplay>
     </Container>
   );
 };

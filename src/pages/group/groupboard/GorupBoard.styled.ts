@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  padding-top: 4%;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -24,7 +23,6 @@ export const GroupBoardTitle = styled.div`
   & div {
     height: 100%;
     width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,8 +74,8 @@ export const User = styled.div`
   align-items: center;
 
   & img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #ddd;
     border-radius: 50%;
   }
@@ -91,6 +89,11 @@ export const User = styled.div`
 export const UserName = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const UserDate = styled.div`
+  color: #727272;
+  font-size: 13px;
 `;
 
 export const BoardImg = styled.div`

@@ -9,6 +9,8 @@ import {
   StepCircle,
   Input,
   SubmitButton,
+  Form,
+ SubmitButtonDisplay, 
 } from '@/pages/group/groupcreate/GroupCreatePage1.Styled';
 import axios from 'axios'; // API 요청을 위해 axios를 가져옴
 
@@ -95,7 +97,7 @@ const GroupCreatePage1: React.FC<GroupCreatePage1Props> = ({
       <Title>
         새로운 독서 토론 모임을 <br /> 시작해볼까요?
       </Title>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <label>모임명 </label>
           <Input
@@ -105,6 +107,7 @@ const GroupCreatePage1: React.FC<GroupCreatePage1Props> = ({
             placeholder="모임명을 입력하세요."
           />
         </FormGroup>
+
         <FormGroup>
           <label>모임소개 </label>
           <textarea
@@ -117,8 +120,12 @@ const GroupCreatePage1: React.FC<GroupCreatePage1Props> = ({
           <label>사진 업로드 </label>
           <input type="file" onChange={handleImageChange} />
         </FileInputContainer>
+
+        <SubmitButtonDisplay>
         <SubmitButton type="submit">다음</SubmitButton>
-      </form>
+        </SubmitButtonDisplay>
+
+      </Form>
     </Container>
   );
 };

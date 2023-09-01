@@ -67,12 +67,8 @@ export const UserWriteBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  & div {
-    width: 90%;
-    margin: 20px 0;
-  }
+  align-items: center;
   & img {
     bottom: 0;
     height: 309px;
@@ -91,26 +87,71 @@ export const Button = styled.div`
   margin: 40px;
 
   & button {
-    width: 88px;
-    height: 38px;
-    border: 1px solid black;
+    width: 90px;
+    height: 35px;
+    border: 1px solid #868686;
     background-color: white;
     margin: 0 10px;
-    border-radius: 10px;
+    border-radius: 17px;
+    text-align: center;
   }
 `;
 
 export const Comment = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-top: solid 1px #ddd;
   margin-bottom: 55px;
 `;
-export const CommentProfileImg = styled.div`
+
+export const CommentsTitle = styled.div`
+  font-size: 20px;
+  font-weight: 800;
+  width: 100%;
+  padding-bottom: 20px;
+
+  & span {
+    color: #84614b;
+  }
+`;
+
+export const CommentsList = styled.div`
+  width: 474px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+`;
+
+export const ComentsBox = styled.div`
+  display: flex;
+
+  width: 90%;
+  height: 100%;
+`;
+
+export const PFImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-right: 20px;
   width: 50px;
   height: 50px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+`;
+
+export const CommentProfileImg = styled.div`
+  width: 39px;
+  height: 39px;
   border-radius: 50%;
   background-color: #fff7ec;
   overflow: hidden;
@@ -204,7 +245,7 @@ export const CIInput = styled.div`
     width: 100%;
     height: 45px;
     border-radius: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #868686;
 
     &::placeholder {
       padding-left: 10px;
@@ -212,4 +253,27 @@ export const CIInput = styled.div`
       color: #a8a8a8;
     }
   }
+`;
+
+export const CommentUser = styled.div`
+  width: 100%;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 3px;
+`;
+
+export const CommentText = styled.div`
+  width: 100%;
+  margin-bottom: 3px;
+`;
+
+export const CommnetCreatedAt = styled.div`
+  width: 100%;
+  margin-bottom: 3px;
+  color: #aeaeae;
+`;
+
+export const PFText = styled.div`
+  width: 100%;
+  margin-bottom: 3px;
 `;

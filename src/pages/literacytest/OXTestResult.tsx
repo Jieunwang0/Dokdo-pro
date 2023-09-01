@@ -76,7 +76,6 @@ const OXTestResult: React.FC<OXTestResultProps> = ({ userAnswers }) => {
       <TestInstructions>
         문해력이 궁금한 친구에게 공유해 보세요!
       </TestInstructions>
-      <ReviewButton>틀린 문제 확인하기</ReviewButton>
       <RepeatButton onClick={handleRepeatTest}>
         ✔ 테스트 다시하기 ✔
       </RepeatButton>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  padding-top: 10%;
+  padding-top: 5%;
   flex-direction: column;
   align-items: center;
   width: 474px;
@@ -12,7 +12,6 @@ export const StepsContainer = styled.div`
   display: flex;
   gap: 10px;
   position: relative;
-  top: -40px;
   & > div:nth-child(2) {
     background-color: #84614b;
     color: #fdf8ef;
@@ -45,7 +44,7 @@ export const Step = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 15px;
+  margin: 15px;
   font-size: 27px;
   text-align: center;
   color: #000000;
@@ -119,7 +118,7 @@ export const Input = styled.input`
   margin-left: 0px;
 `;
 export const SubmitButton = styled.button`
-  width: 442px;
+  width: 440px;
   height: 66px;
   border-radius: 20px;
   background: #84614b;
@@ -129,16 +128,20 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
-  margin-left: 238px;
+  bottom: 65px;
   position: fixed;
-  bottom: 9px;
-  left: 50%;
-  transform: translateX(-50%);
 
   &:hover {
     background: #71503c;
   }
 `;
+
+export const SubmitButtonDisplay = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 474px;
+`;
+
 export const KeywordGroup = styled.div`
   display: flex;
   flex-direction: column;
