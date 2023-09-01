@@ -55,12 +55,12 @@ export const MenuText = styled.div`
   text-align: center;
   font-family: Pretendard;
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
   margin-top: 30px;
 
   span {
-    color: #84614b;
+    color: #FEEA63;
     font-weight: 900;
   }
 `;

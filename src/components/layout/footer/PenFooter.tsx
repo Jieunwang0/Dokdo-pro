@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PenIcon from '@/assets/icon/PenIcon.png';
+import PenIcon from '@/assets/icon/newIcon/pen.png';
 import { Link, useParams } from 'react-router-dom';
 
 function PenFooter() {

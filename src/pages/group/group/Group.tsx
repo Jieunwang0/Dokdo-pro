@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchInput from '@/components/common/searchinput/SearchInput';
 import * as GR from './Group.styled';
-import GroupTitleImg from '@/assets/img/독서장려이미지.jpeg';
+import GroupTitleImg from '@/assets/img/독서장려이미지.png';
 import MoreButton from '@/components/common/morebutton/MoreButton';
 import BoardBox from '@/components/common/boardbox/BoardBox';
 import axios from 'axios';

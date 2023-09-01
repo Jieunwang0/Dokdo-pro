@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 `;
 
 export const GroupBoardTitle = styled.div`
-  height: 80px;
+  height: 55px;
   width: 100%;
   background-color: #fdf8ef;
   color: black;
@@ -19,11 +19,14 @@ export const GroupBoardTitle = styled.div`
   align-items: center;
   font-weight: 700;
   margin-top: 20px;
+  text-align: center;
 
   & div {
     height: 100%;
+    width: 100%;
     padding: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 `;

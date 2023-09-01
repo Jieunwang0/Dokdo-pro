@@ -3,7 +3,9 @@ import {
   Container,
   QuestionText,
   Options,
-  OptionButton,
+  OptionButton1,
+  OptionButton2,
+
   CurrentPosition,
   BackButton,
   Navigation,
@@ -57,8 +59,8 @@ const OXTestScreen: React.FC<OXTestScreenProps> = ({ setUserAnswers }) => {
       </ProgressBarContainer>
       <QuestionText>{questions[currentQuestion]?.question}</QuestionText>
       <Options>
-        <OptionButton onClick={() => handleNextQuestion('O')}>O</OptionButton>
-        <OptionButton onClick={() => handleNextQuestion('X')}>X</OptionButton>
+        <OptionButton1 onClick={() => handleNextQuestion('O')}>O</OptionButton1>
+        <OptionButton2 onClick={() => handleNextQuestion('X')}>X</OptionButton2>
       </Options>
     </Container>
   );

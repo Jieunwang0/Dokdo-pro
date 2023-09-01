@@ -8,6 +8,9 @@ const GlobalStyles = createGlobalStyle`
      v2.0 | 20110126
      License: none (public domain)
   */
+     * {
+    font-family: Pretendard, 'Noto Sans KR', sans-serif;
+  }
 
      body {
   overflow-y: scroll;

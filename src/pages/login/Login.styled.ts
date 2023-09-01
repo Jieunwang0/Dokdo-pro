@@ -53,17 +53,23 @@ export const Input = styled.input`
   }
 `;
 
-export const Save = styled.label`
+export const Save = styled.div`
+display: flex;
+align-items: center;
+
+`
+
+export const SaveLabel = styled.label`
   display: flex;
   color: black;
   cursor: pointer;
   font-size: 18px;
   align-items: center;
 
-  margin: 5px 10px 10px 10px;
+  margin: 15px 10px;
 `;
 export const SaveId = styled.input`
-  margin: 0 8px 2px 0;
+  zoom: 1.3;
 `;
 
 export const OtherLogin = styled.div`
@@ -97,7 +103,7 @@ export const Button = styled.button`
 export const SignupButton = styled(Button)`
   color: #84614b;
   background-color: white;
-  border: 1px solid #84614b;
+  border: 2px solid #84614b;
 
   & p{
     font-weight: bold;

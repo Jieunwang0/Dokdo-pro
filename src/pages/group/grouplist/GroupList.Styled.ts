@@ -40,7 +40,8 @@ export const HashTag = styled.ul`
 
 export const ClickBox = styled.div`
   box-sizing: border-box;
-  border: solid 1px #ddd;
+  border: solid 0.8px #b0b0b0;
+  border-radius: 5px;
   width: 90%;
   height: 110px;
   padding: 10px;
@@ -55,7 +56,9 @@ export const ChoiceImageGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: #f0f0f0;
+  width: 100%;
+  padding-top: 10px;
 `;
 
 export const ChoiceSelect = styled.div`
@@ -78,13 +81,14 @@ export const NoResultBox = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: white;
   width: 100%;
   height: 100%;
   margin-top: 20px;
   border: 1px solid #ddd;
   border-radius: 15px;
   padding: 30px 0;
-
+  margin: 20px 0;
   & div {
     display: flex;
     flex-direction: column;
@@ -94,8 +98,9 @@ export const NoResultBox = styled.div`
 `;
 
 export const ChoiceBoxTitle = styled.div`
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px;
+  font-weight: 700;
   font-weight: bold;
 `;
 
@@ -107,16 +112,18 @@ export const ClickedInfoWrapper = styled.div`
   display: inline-block;
   margin: 10px 0 0 10px;
   padding: 5px 10px;
-  border: 1px solid #ccc;
+  border: none;
+  background-color: #e7e6e6;
   border-radius: 15px;
   font-size: 13px;
   height: 18px;
+  color: #505050;
 `;
 
 export const DeleteButton = styled.button`
   box-sizing: border-box;
   border: 1px solid #ccc;
-  background-color: white;
+  background-color: #e7e6e6;
   color: black;
   border: none;
   cursor: pointer;
@@ -139,14 +146,14 @@ export const SearchButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
+  width: 110px;
   background-color: white;
   border: 1px solid #ddd;
   height: 38px;
   border-radius: 20px;
   margin-bottom: 20px;
-
+  cursor: pointer;
   & div {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;

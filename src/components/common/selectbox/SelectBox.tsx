@@ -1,9 +1,6 @@
 import React from 'react';
 import * as SBox from '@/components/common/selectbox/SelectBox.styled';
 
-
-
-
 interface Option {
   value: string;
   label: string;

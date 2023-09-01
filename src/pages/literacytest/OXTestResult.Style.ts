@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   text-align: center;
@@ -10,12 +11,18 @@ export const Container = styled.div`
   height: 100%; // 화면의 높이만큼 설정
 `;
 
+export const ImgResult = styled.div`
+width: 100%;
+height: 100%;
+`
+
 export const ResultText = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #333;
   margin: 20px;
 `;
+
 export const SocialIcons = styled.div`
   display: flex;
   justify-content: center;
@@ -37,17 +44,27 @@ export const ResultImage = styled.img`
   margin: 20px 0; // 위아래 여백 추가
 `;
 export const ReviewButton = styled.button`
-  margin-top: 20px;
+  width: 284px;
+  height: 60px;
+  padding: 20px 66px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fdf8ef;
+  color: #595959;
+  border: 1px solid #e1d7d1;
+  border-radius: 50px;
+
+  transition: 0.3s;
+  text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  width: 361px;
-  height: 51px;
-  background-color: #84614b;
+  letter-spacing: 1px;
+  outline: none;
+  margin-top: 40px;
+  text-decoration: none;
 
   &:hover {
-    background: #f0f0f0;
+    background: #84614b;
+    color: white;
   }
 
   &:active {
@@ -58,27 +75,62 @@ export const TestInstructions = styled.div`
   margin-top: 30px;
   text-align: center;
   font-family: Inter;
-  font-size: 14px;
+  font-size: 23px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
 `;
 export const RepeatButton = styled.button`
-  margin-top: 40px;
-  color: #84614b;
-  font-weight: bold;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  width: 361px;
-  height: 51px;
+  width: 284px;
+  height: 60px;
+  padding: 20px 66px;
+  font-size: 16px;
+  cursor: pointer;
   background-color: #fdf8ef;
+  color: #595959;
+  border: 1px solid #e1d7d1;
+  border-radius: 50px;
 
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  outline: none;
+  margin-top: 10px;
+  text-decoration: none;
   &:hover {
-    background: #f0f0f0;
+    background: #84614b;
+    color: white;
   }
 
   &:active {
     background: #d0d0d0;
   }
 `;
+
+export const StyledLink = styled(Link)`
+  padding: 20px 66px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #84614b;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  outline: none;
+  margin-top: 40px;
+  text-decoration: none;
+  &:hover {
+    background-color: #84614b;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+`;
+
+  

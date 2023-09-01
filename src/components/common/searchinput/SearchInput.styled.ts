@@ -11,10 +11,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  font-size: 15px;
-  border: 1px soild black;
-  border-radius: 25px;
+  border: 1px solid #E8E8E8;
+  border-radius: 30px;
   width: 85%;
+  height: 35px;
+  background-color: #F3F3F3;
   padding: 10px 10px 10px 20px;
 `;
 
@@ -23,7 +24,7 @@ export const Button = styled.button`
   height: 39px;
   position: absolute;
   right: 74px;
-  background-color: white;
+  background-color: #F3F3F3;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -34,7 +35,7 @@ export const Button = styled.button`
 `;
 
 export const Icon = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 `;

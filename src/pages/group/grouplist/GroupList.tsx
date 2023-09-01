@@ -58,7 +58,7 @@ const Genre = [
   { value: '시/수필', label: '시/수필' },
   { value: '경제', label: '경제' },
   { value: '사회과학', label: '사회과학' },
-  { value: '취미', label: '취미' },
+  { value: '종교', label: '종교' },
 ];
 
 const sortOptions = [
@@ -80,10 +80,10 @@ const GroupList = () => {
     async function fetchData() {
       try {
         let apiUrl =
-          'http://localhost:3001/api/v1/group?orderBy=&limit=5&offset=0'; // 기본적으로 인기순 API 호출
+          'http://localhost:3000/api/v1/group?limit=5&offset=0'; // 기본적으로 인기순 API 호출
 
         if (selectedSort === '최근순') {
-          apiUrl = 'http://localhost:3001/api/v1/group?limit=5&offset=0'; // 최신순 API 호출
+          apiUrl = 'http://localhost:3000/api/v1/group?limit=5&offset=0'; // 최신순 API 호출
         }
 
         const data = await fetchAllGroupData(apiUrl); // API 요청 호출
@@ -149,7 +149,7 @@ const GroupList = () => {
   };
   const handleSearchButtonClick = async () => {
     try {
-      let apiUrl = 'http://localhost:3001/api/v1/group';
+      let apiUrl = 'http://localhost:3000/api/v1/group?limit=5&offset=0';
 
       if (selectedSort === '최근순') {
         apiUrl += '?orderBy=oldest';
@@ -205,7 +205,7 @@ const GroupList = () => {
       <SearchInput />
       <GL.ChoiceBox>
         <GL.ChoiceBoxTitle>
-          내게 맞는 독서 <br /> 토론 모임을 찾아보세요📚
+          내게 맞는 독서 <br /> 토론 모임을 찾아보세요👀
         </GL.ChoiceBoxTitle>
         <GL.HashTagBox>
           <GL.HashTag>

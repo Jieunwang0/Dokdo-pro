@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 474px;
-  min-height: 79.5vh;
+  height: 100%;
 `;
 
 export const QuestionText = styled.div`

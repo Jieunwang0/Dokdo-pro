@@ -14,7 +14,7 @@ import { MiddleBoardData } from '@/components/common/boardbox/MiddleBoardBox';
 async function fetchPopularData() {
   try {
     const response = await axios.get(
-      '//34.64.149.22:3001/api/v1/group?orderBy=&limit=10&offset=0',
+      'http://localhost:3001/api/v1/group?orderBy=&limit=10&offset=0',
     );
     return response.data.data;
   } catch {
@@ -51,7 +51,7 @@ export default function Slider3() {
       className="mySwiper"
     >
       {popularData.length === 0 ? (
-        <p>Loading...</p>
+        <p> 인기순으로 정렬하는 중!</p>
       ) : (
         popularData.map((item, index) => (
           <SwiperSlide key={index}>

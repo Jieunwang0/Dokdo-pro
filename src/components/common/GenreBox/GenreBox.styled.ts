@@ -10,19 +10,17 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 88px;
   height: 88px;
-  background-color: #fff7ec;
+  background-color: white;
   border-radius: 20px;
+  border: 1px solid #ddd;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 55px;
 `;
 
 export const Genre = styled.div`

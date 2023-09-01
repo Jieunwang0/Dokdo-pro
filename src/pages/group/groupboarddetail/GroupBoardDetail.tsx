@@ -35,11 +35,24 @@ interface GroupBoardDetailDataProps {
   data?: GroupDetailData;
 }
 
-const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
+interface GroupNameData {
+  data: {
+    name: string;
+  };
+}
+
+interface GroupNameProps {
+  data?: GroupNameData;
+}
+
+const GroupBoardDetail: React.FC<
+  GroupBoardDetailDataProps & GroupNameProps
+> = ({ data }) => {
   const loginToken = getCookie('loginToken');
   const { groupId, postsId } = useParams<{
     groupId?: string;
     postsId?: string;
+    gId?:string;
   }>();
   const group_Id = groupId ? parseInt(groupId, 10) : undefined;
   const post_Id = postsId ? parseInt(postsId, 10) : undefined;
@@ -51,21 +64,22 @@ const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentText, setCommentText] = useState('');
   const [replyText, setReplyText] = useState<string>('');
+  const [groupName, setGroupName] = useState<string>('');
 
-      function formatCreatedAt(createdAt: string | number | Date) {
-        const date = new Date(createdAt);
+  function formatCreatedAt(createdAt: string | number | Date) {
+    const date = new Date(createdAt);
 
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
 
-        return `${month}월 ${day}일`;
-      }
-
+    return `${month}월 ${day}일`;
+  }
 
   useEffect(() => {
     if (group_Id && post_Id) {
       fetchGroupDetail(group_Id, post_Id);
       fetchComments(group_Id, post_Id);
+      fetchGroupName(group_Id)
     }
   }, [loginToken, group_Id, post_Id]);
 
@@ -92,6 +106,37 @@ const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
       setIsLoading(false);
     }
   };
+
+  const fetchGroupName = async (gId: number) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/api/v1/group/${gId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${loginToken}`,
+          },
+          withCredentials: true,
+        },
+      );
+  
+      if (response.status === 200) {
+        const groupData = response.data.data;
+        if (groupData) {
+          setGroupName(response.data.data.name);
+        } else {
+          console.error('Group data not found');
+        }
+      } else {
+        console.error('Error fetching Name data:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching group name:', error);
+      setGroupName('');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const postComment = async () => {
     try {
       const response = await axios.post(
@@ -165,7 +210,7 @@ const GroupBoardDetail: React.FC<GroupBoardDetailDataProps> = ({ data }) => {
   return (
     <GBD.Wrapper>
       <GBD.GroupBoardTitle>
-        <div>{groupDetail?.data?.post.title || 'Loading...'}</div>
+      <div>{groupName || 'Loading...'}모임의 게시글</div>
       </GBD.GroupBoardTitle>
       <GBD.User>
         <GBD.UserName>{groupDetail?.data.user.name}</GBD.UserName>

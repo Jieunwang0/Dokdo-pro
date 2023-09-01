@@ -83,7 +83,7 @@ const GroupHeader: React.FC<GroupHeaderProps> = ({ data }) => {
       </Down>
     </StyleHeader>
   );
-}
+};
 
 export default GroupHeader;
 
@@ -93,7 +93,7 @@ const StyleHeader = styled.div`
   height: 50px;
   width: 472px;
   position: fixed;
-  padding-right:2px;
+  padding-right: 2px;
   z-index: 9999;
 `;
 
@@ -130,5 +130,6 @@ const Button = styled.button`
 
   &.active {
     border-bottom: 5px solid #7c6250;
+    font-weight: bold;
   }
 `;

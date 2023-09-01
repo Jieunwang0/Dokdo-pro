@@ -11,6 +11,7 @@ interface UserData {
 interface GroupData {
   name: string;
   introduction: string;
+  profile: string;
   tags: string[];
 }
 
@@ -79,7 +80,7 @@ export default function MyGroupsComponent() {
           {groupData.map((group, index) => (
             <MyGroupsStyle.GroupBoardBox key={index}>
               <MyGroupsStyle.BoardImg
-                src="그룹의 대표 이미지 경로"
+                src={group.profile}
                 alt="그룹의 대표 이미지"
               />
               <MyGroupsStyle.RightSide>

@@ -39,7 +39,7 @@ const GroupBoard: React.FC<GroupBoardProps> = ({ data }) => {
     //@ts-ignore
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
-
+  //localhost:3000
   async function fetchAllGroupBoardData(groupId: number) {
     try {
       const response = await axios.get(

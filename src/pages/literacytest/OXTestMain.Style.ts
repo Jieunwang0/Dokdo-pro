@@ -55,12 +55,12 @@ export const MenuText = styled.div`
   text-align: center;
   font-family: Pretendard;
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
   margin-top: 30px;
 
   span {
-    color: #84614b;
+    color: #FEEA63;
     font-weight: 900;
   }
 `;
@@ -85,10 +85,14 @@ export const TestInstructions = styled.p`
 
 export const image = styled.img`
   width: 460px;
-  width: 100%x;
+  width: 216x;
   height: 280px;
   margin-top: 20px;
 `;
+
+
+
+
 
 export const startButton = styled.button`
   padding: 20px 66px;

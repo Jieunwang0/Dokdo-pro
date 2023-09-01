@@ -28,11 +28,11 @@ export const UserIcon = styled.img`
 export const Introduce = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 270px;
   height: auto;
   overflow: hidden;
   padding-top: 5px;
-   padding-left: 30px;
+ padding-left: 30px;
 `;
 
 export const NickName = styled.div`

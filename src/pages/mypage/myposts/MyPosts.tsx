@@ -13,11 +13,7 @@ interface PostData {
   updatedAt: string;
   __v: number;
   content: string;
-  images: string[]; // 이미지 파일명 배열
-}
-
-interface PostBoxProps {
-  data?: PostData;
+  images: string[];
 }
 
 interface UserData {
@@ -25,11 +21,11 @@ interface UserData {
   profilePic: string;
 }
 
-function MyPostsComponent({ data }: PostBoxProps) {
+function MyPostsComponent() {
   const navigate = useNavigate();
   const [myPosts, setMyPosts] = useState<PostData[]>([]);
-  const [selectedPosts, setSelectedPosts] = useState<any[]>([]); // 추가: 선택된 포스트 정보를 저장할 상태
-  const [userData, setUserData] = useState<UserData | null>(null); // 추가: 유저 정보 상태
+  const [selectedPosts, setSelectedPosts] = useState<PostData[]>([]);
+  const [userData, setUserData] = useState<UserData | null>(null);
 
   function formatCreatedAt(createdAt: string | number | Date) {
     const date = new Date(createdAt);
@@ -125,23 +121,25 @@ function MyPostsComponent({ data }: PostBoxProps) {
                 <MyPostsStyle.BoardLeft>
                   <MyPostsStyle.ProfileData>
                     <MyPostsStyle.ProfileImg
-                      src={`http://localhost:3001/api/v1/image/profile/${userData.profilePic}`}
-                      alt={`${userData.name}의 프로필 사진`}
+                      src={`http://localhost:3001/api/v1/image/profile/${userData.data.getUser.profilePic}`}
+                      alt={`${userData.data.getUser.name}의 프로필 사진`}
                     />
                     <MyPostsStyle.UpdatedProfile>
-                      <MyPostsStyle.Writer>{userData.name}</MyPostsStyle.Writer>
+                      <MyPostsStyle.Writer>
+                        {userData.data.getUser.name}
+                      </MyPostsStyle.Writer>
                       <MyPostsStyle.PostedDate>
-                        {selectedPost.createdAt}
+                        {formatCreatedAt(selectedPost.createdAt)}
                       </MyPostsStyle.PostedDate>
                     </MyPostsStyle.UpdatedProfile>
                   </MyPostsStyle.ProfileData>
 
                   <MyPostsStyle.Content>
-                    {formatCreatedAt(selectedPost.content)}
+                    {formatCreatedAt(selectedPost.createdAt)}
                   </MyPostsStyle.Content>
                 </MyPostsStyle.BoardLeft>
                 <MyPostsStyle.BoardImg
-                  src={`http://localhost:3001/api/v1/image/post/${selectedPost.images[0]}`} // 이미지 URL 설정
+                  src={`http://localhost:3001/api/v1/image/post/${selectedPost.images[0]}`}
                   alt="게시된 이미지"
                 />
               </MyPostsStyle.Boardbox>

@@ -45,7 +45,7 @@ function Main() {
     <M.Wrapper>
       <Slider />
       <M.GridContainer>
-        어떤 도서 장르의
+        어떤 도서 분야의
         <br />
         토론 모임을 찾으세요?📖
         <GenreBox />
@@ -59,7 +59,7 @@ function Main() {
           <BoardBox key={index} data={groupItem} isMainPage={isMainPage} />
         ))}
       </M.GroupList>
-      <MoreButton to="/group/list">전체보기</MoreButton>
+      <MoreButton to="/group/list">더보기</MoreButton>
 
       <M.GroupTop10>
         <M.GroupTopTitle>

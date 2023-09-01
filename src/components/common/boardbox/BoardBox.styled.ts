@@ -40,7 +40,7 @@ export const HashTagDisplay = styled.div`
 `;
 
 export const HashTags = styled.div`
-  border: none;
+ border: none;
   height: 20px;
   border-radius: 20px;
   background-color: #fff7ec;
@@ -49,12 +49,12 @@ export const HashTags = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 12px;
-  padding: 2px 5px;
-
+  padding: 2px 13px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
+  white-space: nowrap; 
 `;
 
 export const GroupName = styled.div`
@@ -64,11 +64,11 @@ export const GroupName = styled.div`
 `;
 
 export const Intro = styled.div`
-   width: 95%;
+  width: 95%;
   color: #707070;
   font-size: 14px;
   overflow: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   text-overflow: ellipsis;
   padding: 3px 0;
 `;

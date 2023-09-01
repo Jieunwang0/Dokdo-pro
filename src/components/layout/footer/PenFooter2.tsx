@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   font-size: 13px;
   background-color: transparent;
   width: 472px;
-  z-index: 9999;
+  z-index: 9998;
 `;
 
 const Display = styled.div`

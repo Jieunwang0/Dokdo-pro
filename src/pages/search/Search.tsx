@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '@/pages/search/Search.styled';
 import SearchInput from '@/components/common/searchinput/SearchInput';
-import BookAndContestBox from '@/components/common/BookAndContestBox/BookAndContestBox';
+import BookAndContestBox from '@/components/common/BookContest/BookAndContestBox';
 
 const Search = () => {
   return (
@@ -25,7 +25,7 @@ const Search = () => {
       <S.BookRecBox>
         <S.BookRecBoxTitle>도서 추천</S.BookRecBoxTitle>
         <S.BookRecList>
-         <BookAndContestBox />
+          <BookAndContestBox />
         </S.BookRecList>
       </S.BookRecBox>
       <S.BookRecBox>

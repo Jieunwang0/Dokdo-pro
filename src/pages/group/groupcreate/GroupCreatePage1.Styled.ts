@@ -13,7 +13,6 @@ export const StepsContainer = styled.div`
   display: flex;
   gap: 10px;
   position: relative;
-  top: -40px;
   & > div:nth-child(1) {
     background-color: #84614b;
     color: #fdf8ef;
@@ -76,6 +75,7 @@ export const FormGroup = styled.div`
     box-sizing: border-box;
     background-color: #ededed;
     border: 1px solid #ccc;
+    width: 100%;
   }
   textarea {
     width: 314px;
@@ -109,12 +109,10 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
-  margin-left: 238px;
-  // 하단 고정을 위한 속성 추가
+  bottom: 65px;
+  left: 51%;
+  //transform: translateX(-50%);
   position: fixed;
-  bottom: 9px;
-  left: 50%;
-  transform: translateX(-50%);
 
   &:hover {
     background: #71503c;

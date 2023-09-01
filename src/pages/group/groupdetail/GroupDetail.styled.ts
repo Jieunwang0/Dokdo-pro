@@ -12,6 +12,10 @@ export const GroupHeader = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
+  margin-bottom: 50px;
+  &:hover {
+    font-weight: bold;
+  }
 `;
 
 export const GroupName = styled.div`
@@ -166,16 +170,32 @@ export const SDTitle = styled.div`
   padding: 10px;
 `;
 export const SDDate = styled.div`
+  margin-top: 10px;
   font-size: 15px;
   padding: 2px;
+  & > span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
 `;
 export const SDPlace = styled.div`
   font-size: 15px;
   padding: 2px;
+  & > span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
 `;
 export const SDDues = styled.div`
   font-size: 15px;
   padding: 2px;
+  & > span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
 `;
 
 export const NotScheduleBox = styled.div`
@@ -226,6 +246,7 @@ export const Desc = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-weight: bold;
 `;
 
 export const ButtonDisplay = styled.div`
@@ -235,33 +256,84 @@ export const ButtonDisplay = styled.div`
 export const ModalWrapper = styled.div`
   position: fixed;
   top: 50%;
-  left: 20%; // 화면의 좌측으로 이동
+  left: 20%;
   transform: translateY(-50%);
-  width: 30%; // Modal의 폭 설정
-  background-color: #f5f5f5; // Modal의 배경색 변경
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // 그림자 효과 추가
-  border-radius: 8px; // 모서리 둥글게
+  width: 409px;
+  height: 381px;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   z-index: 1000;
+
+  display: flex; // Flexbox 사용
+  flex-direction: column; // 수직 방향으로 아이템 배치
 `;
 
 export const ModalHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  margin-top: 30px;
+  font-weight: bold;
+  justify-content: center; // 항목들을 수평 방향으로 중앙에 배치합니다.
+  align-items: center; // 항목들을 세로 방향으로 중앙에 배치합니다.
   padding: 10px 15px;
-  border-bottom: 1px solid #ccc;
+  font-size: 24px;
 `;
 
 export const ModalContent = styled.div`
+  flex: 1;
   padding: 15px;
+  overflow: auto;
+  & > form > div {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  & > form > div > label {
+    width: 60px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  & > form > div > input {
+    flex: 1;
+    width: 306px;
+    height: 31.6px;
+    border-radius: 10px;
+    border: 0px solid #ccc;
+    background-color: #efefef;
+    margin-left: -15px;
+    margin-right: 20px;
+  }
+
+  & > form > .button-container > button {
+    margin-top: 10px;
+    width: 76px;
+    height: 35px;
+    background-color: #84614b;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  & > form > .button-container > button:hover {
+    background-color: #ffffff;
+    border: 1px solid #84614b;
+    color: #84614b;
+  }
+  & > form > .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; // 버튼들 사이의 간격
+  }
 `;
 
-export const CloseButton = styled.button`
-  border: none;
-  background-color: transparent;
-  font-size: 24px;
-  cursor: pointer;
-`;
 export const NFWrapper = styled.div`
   position: fixed;
   bottom: 0;

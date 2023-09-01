@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 474px;
-  min-height: 79.5vh;
+  height: 100%;
 `;
 
 export const QuestionText = styled.div`
@@ -19,29 +19,58 @@ export const QuestionText = styled.div`
 
 export const Options = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 300px;
 `;
 
-export const OptionButton = styled.button`
+export const OptionButton1 = styled.button`
   padding: 12px 10px;
   margin: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 96px;
   color: #333;
   border: 0.5px solid #aeaeae;
-  background: #fff;
+  background: #F1F1F1;
   border-radius: 50px;
   transition: background 0.3s ease;
+  width: 188px;
+  height: 216px;
 
   &:hover {
     font-weight: bold;
-    color: #84614b;
-    background: #fdf8ef; // 기존에 있던 hover에 대한 배경색 변경
+    color: #0078E8;
+    background: #ECF9FF; // 기존에 있던 hover에 대한 배경색 변경
   }
 
   &:active {
-    background: #d0d0d0;
+    background: #63DBFB;
+    
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+`;
+export const OptionButton2 = styled.button`
+  padding: 12px 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 96px;
+  color: #333;
+  border: 0.5px solid #aeaeae;
+  background: #F1F1F1;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  width: 188px;
+  height: 216px;
+
+  &:hover {
+    font-weight: bold;
+    color: #EB3123;
+    background: #ECF9FF; // 기존에 있던 hover에 대한 배경색 변경
+  }
+
+  &:active {
+    background: #63DBFB;
   }
 
   &:disabled {

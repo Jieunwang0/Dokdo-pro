@@ -1,10 +1,10 @@
 import React from 'react';
 import * as FT from '@/components/layout/footer/Footer.styled';
-import homeIcon from '@/assets/icon/Home.png';
-import groupIcon from '@/assets/icon/Person.png';
-import boardIcon from '@/assets/icon/Plus.png';
-import likeIcon from '@/assets/icon/Favorite.png';
-import userIcon from '@/assets/icon/User.png';
+import homeIcon from '@/assets/icon/newIcon/푸터_홈1.png';
+import groupIcon from '@/assets/icon/newIcon/푸터_둘러보기0.png';
+import boardIcon from '@/assets/icon/newIcon/푸터_글작성0.png';
+import likeIcon from '@/assets/icon/newIcon/푸터_하트0.png';
+import userIcon from '@/assets/icon/newIcon/푸터_마이페이지.png';
 import { Cookies } from 'react-cookie';
 
 const cookies = new Cookies();

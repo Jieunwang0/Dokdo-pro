@@ -26,7 +26,7 @@ export const Tag = styled.div`
   justify-items: left;
   font-size: 18px;
   font-weight: bold;
-
+  letter-spacing: 0.1rem;
 `;
 
 export const FormInput = styled.div`
@@ -42,14 +42,13 @@ export const Input = styled.input`
   border: 1px solid #cbcbcb;
   padding: 0 15px;
 
-  &::placeholder{
+  &::placeholder {
     color: #cbcbcb;
     font-size: 15px;
   }
-  &:hover{
+  &:hover {
     border: 2px solid #d31a38;
   }
-  
 `;
 
 export const Alert = styled.div`
@@ -58,7 +57,9 @@ export const Alert = styled.div`
   padding-top: 10px;
   margin-left: 5px;
   font-size: 15px;
-  font-weight : 700;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+
   color: ${({ className }) => (className === 'success' ? 'green' : '#d31a38')};
 `;
 
@@ -82,25 +83,20 @@ export const CheckContainer = styled.div`
   margin: 15px 27px 16px 27px;
 `;
 
-export const Wrapper2 = styled.form`
-
-
-`;
+export const Wrapper2 = styled.form``;
 
 export const CheckWrapper = styled.div`
   box-sizing: border-box;
   border-radius: 4px;
 
   width: 350px;
-  
 `;
 
 export const CheckLine = styled.div`
-display: flex;
-justify-content: space-between;
-width: 420px;
-`
-
+  display: flex;
+  justify-content: space-between;
+  width: 420px;
+`;
 
 export const CheckLabel = styled.label`
   display: flex;
@@ -108,32 +104,32 @@ export const CheckLabel = styled.label`
   padding: 7px;
   color: #484848;
   align-items: center;
-  
+  letter-spacing: 0.1rem;
 `;
 
 export const AllCheckLabel = styled(CheckLabel)`
   font-size: 16px;
-font-weight: bold;
- 
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+
   padding: 3px;
   color: black;
 `;
 
-
 export const AllCheckInput = styled.input`
   margin-right: 8px;
   zoom: 1.5;
+  cursor: pointer;
 `;
-
 
 export const CheckInput = styled(AllCheckInput)`
   zoom: 1.2;
+\
 `;
-
-
 
 export const CheckBox = styled.div`
   margin-top: 10px;
+  
 `;
 
 export const SubmitButton = styled(InputButton)`
@@ -147,13 +143,12 @@ export const SubmitButton = styled(InputButton)`
   color: white;
 `;
 
-
 export const ModalButton = styled.button`
   padding-bottom: 3px;
   border: none;
   background-color: white;
   margin-bottom: 10px;
-
+  cursor: pointer;
   & div {
     font-size: 12px;
     color: #cbcbcb;
@@ -167,10 +162,10 @@ export const ModalSubmitButton = styled.button`
   border: none;
   text-decoration: none;
   color: white;
+`;
 
-  `;
-
-  export const Ptag = styled.p`
+export const Ptag = styled.p`
   font-weight: bold;
   font-size: 20px;
-  `;
+  letter-spacing: 0.1rem;
+`;
