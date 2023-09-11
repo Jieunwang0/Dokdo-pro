@@ -2,7 +2,7 @@
   "name": "project04e",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://34.64.149.22:3001",
+  "proxy": "http://3.39.195.116:3001",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@reduxjs/toolkit": "^1.9.5",
